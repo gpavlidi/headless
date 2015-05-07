@@ -118,7 +118,7 @@ class Headless
   def take_screenshot(file_path)
     CliUtil.ensure_application_exists!('import', "imagemagick not found on your system. Please install it using sudo apt-get install imagemagick")
 
-    system "#{CliUtil.path_to('import')} -display localhost:#{display} -window root #{file_path}"
+    system "#{CliUtil.path_to('import')} -display :#{display} -window root #{file_path}"
   end
 
 private
@@ -180,4 +180,3 @@ private
     end
   end
 end
-
